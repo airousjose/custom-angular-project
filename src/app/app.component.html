@@ -1,0 +1,30 @@
+<div>
+  <app-navigation-bar></app-navigation-bar>
+</div>
+
+<div>
+  <app-login></app-login>
+</div>
+
+<div>
+    <h2>
+        Artist list from local json file...
+    </h2>
+    <form >
+        <div class="form-group row" style="margin-top: 30px;">
+            <label for="inputAttribute" class="col-sm-4 col-form-label">Choose Artist Name</label>
+            <div class="col-sm-6">
+              <select class="form-control" id="inputAttribute" style="width: 250px;">
+                <option value="" *ngFor="let item of artistList" >{{item.name}}</option>
+              </select>
+            </div>
+          </div>
+    </form>
+    <ul *ngFor="let item of artistList">
+      <pre>
+        <li>Short Name    : <input type="text" name="artistname" value="{{item.shortname}}"></li>
+        <li>Reknown       : <input type="text" name="artistname" value="{{item.reknown}}"></li>   
+        <li>Bio           : <textarea rows="6" cols="100">{{item.bio}}</textarea> </li><hr>
+      </pre> 
+    </ul>
+</div>
